@@ -30,7 +30,8 @@ struct FrameworkGridView: View {
                 } else {
                     List {
                         ForEach(MockData.frameworks) { framework in
-                            NavigationLink(destination: DetailView(framework: framework, isShowingDetailView: $viewModel.isShowingDetailView, isGrid: $viewModel.isGrid)) {       FrameworkTitleView(framework: framework, isGrid: $viewModel.isGrid)
+                            NavigationLink(destination: DetailView(framework: framework, isShowingDetailView: $viewModel.isShowingDetailView, isGrid: $viewModel.isGrid)) {
+                                FrameworkTitleView(framework: framework, isGrid: $viewModel.isGrid)
                             }
                         }
                     }
