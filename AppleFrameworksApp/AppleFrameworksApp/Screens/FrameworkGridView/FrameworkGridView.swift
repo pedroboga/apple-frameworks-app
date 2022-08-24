@@ -9,37 +9,51 @@ import SwiftUI
 
 struct FrameworkGridView: View {
     @StateObject var viewModel = FrameworkGridViewModel()
-    
+    @Binding var isGrid: Bool
     var body: some View {
         NavigationView {
-            //            ScrollView {
-            //                LazyVGrid(columns: columns) {
-            //                    ForEach(MockData.frameworks) { framework in
-            //                        FrameworkTitleView(framework: framework)
-            //                            .onTapGesture {
-            //                                viewModel.selectedFramework = framework
-            //                            }
-            //                    }
-            //                }
-            //            }
-            List {
-                ForEach(MockData.frameworks) { framework in
-                    NavigationLink(destination: DetailView(framework: framework, isShowingDetailView: $viewModel.isShowingDetailView)) {       FrameworkTitleView(framework: framework)
+            Group {
+                if viewModel.isGrid {
+                    ScrollView {
+                        LazyVGrid(columns: viewModel.columns) {
+                            ForEach(MockData.frameworks) { framework in
+                                FrameworkTitleView(framework: framework, isGrid: $viewModel.isGrid)
+                                    .onTapGesture {
+                                        viewModel.selectedFramework = framework
+                                    }
+                            }
+                        }
                     }
+                    .sheet(isPresented: $viewModel.isShowingDetailView) {
+                        DetailView(framework: viewModel.selectedFramework ?? MockData.sampleFramework, isShowingDetailView: $viewModel.isShowingDetailView, isGrid: $viewModel.isGrid)
+                    }
+                } else {
+                    List {
+                        ForEach(MockData.frameworks) { framework in
+                            NavigationLink(destination: DetailView(framework: framework, isShowingDetailView: $viewModel.isShowingDetailView, isGrid: $viewModel.isGrid)) {       FrameworkTitleView(framework: framework, isGrid: $viewModel.isGrid)
+                            }
+                        }
+                    }
+                    .listStyle(.grouped)
                 }
             }
-            .listStyle(.grouped)
             .navigationTitle("Apple Frameworks")
-//            .sheet(isPresented: $viewModel.isShowingDetailView) {
-//                DetailView(framework: viewModel.selectedFramework ?? MockData.sampleFramework, isShowingDetailView: $viewModel.isShowingDetailView)
-//            }
+            .toolbar {
+                Button {
+                    viewModel.isGrid.toggle()
+                } label: {
+                    Image(systemName: viewModel.isGrid ? "list.dash" : "square.grid.2x2")
+                }
+                
+            }
+            .accentColor(Color(.label))
         }
-        .accentColor(Color(.label))
+        
     }
 }
 
 struct FrameworkGridView_Previews: PreviewProvider {
     static var previews: some View {
-        FrameworkGridView()
+        FrameworkGridView(isGrid: .constant(true))
     }
 }

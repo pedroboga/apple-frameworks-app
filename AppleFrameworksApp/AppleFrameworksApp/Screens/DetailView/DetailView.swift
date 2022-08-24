@@ -10,18 +10,23 @@ import SwiftUI
 struct DetailView: View {
     let framework: Framework
     @Binding var isShowingDetailView: Bool
+    @Binding var isGrid: Bool
     @State private var isShowingSafariView = false
     var body: some View {
         VStack {
-            //XDismissButton(isShowingDetailView: $isShowingDetailView)
+            if isGrid {
+                XDismissButton(isShowingDetailView: $isShowingDetailView)
+            }
             Spacer()
-            FrameworkTitleView(framework: framework)
+            FrameworkTitleView(framework: framework, isGrid: $isGrid)
             Text(framework.description)
                 .font(.body)
                 .padding()
             Spacer()
             Button {
-                isShowingSafariView = true
+                withAnimation {
+                    isShowingSafariView = true
+                }
             } label: {
                 DetailButton(title: "Learn More")
             }
@@ -34,6 +39,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(framework: MockData.sampleFramework, isShowingDetailView: .constant(false))
+        DetailView(framework: MockData.sampleFramework, isShowingDetailView: .constant(false), isGrid: .constant(true))
     }
 }
