@@ -16,6 +16,7 @@
 		5AF70CA428B445760085418B /* FrameworkTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF70CA328B445760085418B /* FrameworkTitleView.swift */; };
 		5AF70CA628B448440085418B /* DetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF70CA528B448440085418B /* DetailButton.swift */; };
 		5AF70CA828B5368E0085418B /* FrameworkGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF70CA728B5368E0085418B /* FrameworkGridViewModel.swift */; };
+		5AF70CAA28B53DA30085418B /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF70CA928B53DA30085418B /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		5AF70CA328B445760085418B /* FrameworkTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkTitleView.swift; sourceTree = "<group>"; };
 		5AF70CA528B448440085418B /* DetailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailButton.swift; sourceTree = "<group>"; };
 		5AF70CA728B5368E0085418B /* FrameworkGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkGridViewModel.swift; sourceTree = "<group>"; };
+		5AF70CA928B53DA30085418B /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				5AF70CA328B445760085418B /* FrameworkTitleView.swift */,
 				5AF70CA528B448440085418B /* DetailButton.swift */,
 				5AF70CA728B5368E0085418B /* FrameworkGridViewModel.swift */,
+				5AF70CA928B53DA30085418B /* SafariView.swift */,
 			);
 			path = AppleFrameworksApp;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				5AF70CA228B445350085418B /* DetailView.swift in Sources */,
 				5AF70C9E28B41EED0085418B /* Framework.swift in Sources */,
 				5AF70C9028B41E780085418B /* AppleFrameworksAppApp.swift in Sources */,
+				5AF70CAA28B53DA30085418B /* SafariView.swift in Sources */,
 				5AF70CA628B448440085418B /* DetailButton.swift in Sources */,
 				5AF70CA828B5368E0085418B /* FrameworkGridViewModel.swift in Sources */,
 				5AF70CA428B445760085418B /* FrameworkTitleView.swift in Sources */,
