@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5ADCA09228C6CA5800EA1FE8 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCA09128C6CA5800EA1FE8 /* DetailViewModel.swift */; };
 		5AF70C9028B41E780085418B /* AppleFrameworksAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF70C8F28B41E780085418B /* AppleFrameworksAppApp.swift */; };
 		5AF70C9428B41E7A0085418B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF70C9328B41E7A0085418B /* Assets.xcassets */; };
 		5AF70C9728B41E7A0085418B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF70C9628B41E7A0085418B /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5ADCA09128C6CA5800EA1FE8 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		5AF70C8C28B41E780085418B /* AppleFrameworksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleFrameworksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF70C8F28B41E780085418B /* AppleFrameworksAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleFrameworksAppApp.swift; sourceTree = "<group>"; };
 		5AF70C9328B41E7A0085418B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				5AF70CA128B445350085418B /* DetailView.swift */,
+				5ADCA09128C6CA5800EA1FE8 /* DetailViewModel.swift */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				5AF70CA028B420090085418B /* FrameworkGridView.swift in Sources */,
 				5AF70CA228B445350085418B /* DetailView.swift in Sources */,
 				5AF70CAC28B65F5D0085418B /* XDismissButton.swift in Sources */,
+				5ADCA09228C6CA5800EA1FE8 /* DetailViewModel.swift in Sources */,
 				5AF70C9E28B41EED0085418B /* Framework.swift in Sources */,
 				5AF70C9028B41E780085418B /* AppleFrameworksAppApp.swift in Sources */,
 				5AF70CAA28B53DA30085418B /* SafariView.swift in Sources */,

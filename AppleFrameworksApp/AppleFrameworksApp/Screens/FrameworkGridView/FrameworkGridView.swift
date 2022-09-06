@@ -25,12 +25,12 @@ struct FrameworkGridView: View {
                         }
                     }
                     .sheet(isPresented: $viewModel.isShowingDetailView) {
-                        DetailView(framework: viewModel.selectedFramework ?? MockData.sampleFramework, isShowingDetailView: $viewModel.isShowingDetailView, isGrid: $viewModel.isGrid)
+                        DetailView(viewModel: DetailViewModel(framework: viewModel.selectedFramework!, isShowingDetailView: $viewModel.isShowingDetailView), isGrid: $viewModel.isGrid)
                     }
                 } else {
                     List {
                         ForEach(MockData.frameworks) { framework in
-                            NavigationLink(destination: DetailView(framework: framework, isShowingDetailView: $viewModel.isShowingDetailView, isGrid: $viewModel.isGrid)) {
+                            NavigationLink(destination: DetailView(viewModel: DetailViewModel(framework: viewModel.selectedFramework!, isShowingDetailView: $viewModel.isShowingDetailView), isGrid: $viewModel.isGrid)) {
                                 FrameworkTitleView(framework: framework, isGrid: $viewModel.isGrid)
                             }
                         }

@@ -8,37 +8,38 @@
 import SwiftUI
 
 struct DetailView: View {
-    let framework: Framework
-    @Binding var isShowingDetailView: Bool
+    @ObservedObject var viewModel: DetailViewModel
     @Binding var isGrid: Bool
-    @State private var isShowingSafariView = false
     var body: some View {
         VStack {
             if isGrid {
-                XDismissButton(isShowingDetailView: $isShowingDetailView)
+                XDismissButton(isShowingDetailView: $viewModel.isShowingDetailView.wrappedValue)
             }
             Spacer()
-            FrameworkTitleView(framework: framework, isGrid: $isGrid)
-            Text(framework.description)
+            FrameworkTitleView(framework: viewModel.framework, isGrid: $isGrid)
+            Text(viewModel.framework.description)
                 .font(.body)
                 .padding()
             Spacer()
-            Button {
-                withAnimation {
-                    isShowingSafariView = true
-                }
-            } label: {
+            Link(destination: URL(string: viewModel.framework.urlString) ?? URL(string: "")!) {
                 DetailButton(title: "Learn More")
             }
+//            Button {
+//                withAnimation {
+//                    isShowingSafariView = true
+//                }
+//            } label: {
+//                DetailButton(title: "Learn More")
+//            }
         }
-        .fullScreenCover(isPresented: $isShowingSafariView) {
-            SafariView(url: URL(string: framework.urlString) ?? URL(string: "")!)
-        }
+        //.fullScreenCover(isPresented: $isShowingSafariView) {
+//            SafariView(url: URL(string: viewModel.framework.urlString) ?? URL(string: "")!)
+        //}
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(framework: MockData.sampleFramework, isShowingDetailView: .constant(false), isGrid: .constant(true))
+        DetailView(viewModel: DetailViewModel(framework: MockData.sampleFramework, isShowingDetailView: .constant(false)), isGrid: .constant(true))
     }
 }
